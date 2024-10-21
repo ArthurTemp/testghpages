@@ -13,7 +13,7 @@ permissions:
   contents: read # Add other permissions as necessary
 
 jobs:
-  build:
+    build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14' # or your preferred Node.js version
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
@@ -30,11 +30,15 @@ jobs:
       - name: Build the project
         run: npm run build
 
+      - name: Check build output
+        run: ls -la _site
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: github-pages
           path: _site
+
 
   deploy:
     environment:
