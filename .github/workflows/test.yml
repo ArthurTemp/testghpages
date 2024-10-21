@@ -1,4 +1,4 @@
-name: test
+name: Deploy Jekyll to GitHub Pages
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: github-pages
-          path: <path-to-built-files> # Replace with the path to your built files (e.g., ./dist or ./_site)
+          path: _site # This is where your site is built
 
   deploy:
     environment:
@@ -48,4 +48,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: <path-to-built-files> # Same path as above
+          publish_dir: _site # This should match the path to your built files
