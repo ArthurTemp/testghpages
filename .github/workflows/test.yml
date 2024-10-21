@@ -54,7 +54,7 @@ jobs:
         with:
           name: github-pages
       - name: Check if _site exists
-        run: ls -la
+        run: ls -laR
 
       - name: Deploy to GitHub Pages
         id: deployment
