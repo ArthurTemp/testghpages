@@ -34,7 +34,7 @@ jobs:
         run: ls -la _site
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: _site
@@ -48,7 +48,7 @@ jobs:
     needs: build
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: github-pages
 
@@ -56,4 +56,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: _site
+          artifact_name: github-pages
