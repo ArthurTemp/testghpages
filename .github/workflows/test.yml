@@ -8,6 +8,10 @@ on:
     branches:
       - master
 
+permissions:
+  id-token: write
+  contents: read # Add other permissions as necessary
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: github-pages
-          path: _site # This is where your site is built
+          path: _site
 
   deploy:
     environment:
@@ -48,4 +52,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: _site # This should match the path to your built files
+          publish_dir: _site
