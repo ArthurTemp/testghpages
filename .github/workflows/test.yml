@@ -13,7 +13,7 @@ permissions:
   contents: read # Add other permissions as necessary
 
 jobs:
-    build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
