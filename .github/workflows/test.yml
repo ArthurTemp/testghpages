@@ -35,11 +35,11 @@ jobs:
       - name: Check build output
         run: ls -la _site
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
-          path: .
+          name: _site
+          path: ./_site/
 
 
   deploy:
