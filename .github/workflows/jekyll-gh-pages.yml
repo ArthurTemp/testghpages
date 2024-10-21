@@ -40,8 +40,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Serve the project (optional)
-        run: npm run serve
+#      - name: Serve the project (optional)
+#        run: npm run serve
 
   # Deployment job
   deploy:
