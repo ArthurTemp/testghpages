@@ -53,6 +53,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: github-pages
+      - name: test
+        run: find _site -type l
 
       - name: Deploy to GitHub Pages
         id: deployment
