@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: github-pages
-          path: _site
+          path: <path-to-built-files> # Replace with the path to your built files (e.g., ./dist or ./_site)
 
   deploy:
     environment:
@@ -48,4 +48,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: _site # Same path as above
+          publish_dir: <path-to-built-files> # Same path as above
