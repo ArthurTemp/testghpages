@@ -10,7 +10,9 @@ on:
 
 permissions:
   id-token: write
-  contents: read # Add other permissions as necessary
+  contents: read
+  pages: write  # Add this line
+
 
 jobs:
   build:
